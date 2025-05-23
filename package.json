@@ -1,0 +1,30 @@
+{
+  "name": "netlify-playwright-tests",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "copy-data": "copyfiles -u 1 data/**/* dist/data",
+    "pretest": "npm run build && node dist/scripts/generate-sitemap-json.js",
+    "test": "playwright test",
+    "clean": "rm -rf test-results playwright-report",
+    "test:clean": "npm run clean && npm run test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/xml2js": "^0.4.14",
+    "copyfiles": "^2.4.1",
+    "playwright": "^1.52.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "node-fetch": "^3.3.2",
+    "node-html-parser": "^7.0.1",
+    "xml2js": "^0.6.2"
+  }
+}

@@ -1,0 +1,28 @@
+# Node modules
+node_modules/
+
+# Playwright test reports
+playwright-report/
+test-results/
+
+# Output folders
+dist/
+out/
+
+# Logs
+*.log
+
+# Environment variables
+.env
+.env.*
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# IDE-specific
+.vscode/
+.idea/
+
+# TypeScript build artifacts
+*.tsbuildinfo
