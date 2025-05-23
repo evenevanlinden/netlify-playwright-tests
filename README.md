@@ -1,87 +1,98 @@
 # Netlify QA Automation Assessment
 
-This is a Playwright + TypeScript test suite for validating parts of the Netlify website.
-
-## Setup Instructions
-
-```npm install```
-```npx playwright install```
-
-
-# Netlify Playwright QA Automation Assessment
-
-## Overview
-
-This repository contains an automated test suite developed as part of a QA Automation Specialist assessment using Playwright and TypeScript.
+This repository contains an automated test suite developed as part of a QA Automation Specialist assessment using **Playwright** and **TypeScript**.
 
 The purpose of the tests is to validate key functionalities and crawlability of the [Netlify](https://www.netlify.com/) website, demonstrating technical skills in test automation, code quality, and testing best practices.
 
-## Test Cases Implemented
+---
+
+## 📂 Test Cases Implemented
 
 ### 1. Lead Capture Form Validation
-- Verify the presence and functionality of the newsletter subscription form on the home page
+- Verify the presence and functionality of the newsletter subscription form on the homepage
 - Test successful form submission with valid data
 - Test form validation errors with invalid or missing data
-- Verify that appropriate user feedback is shown after submission
+- Verify appropriate user feedback after submission
 
 ### 2. Sitemap and Crawlability Verification
-- Confirm the existence of the sitemap (`/sitemap.xml`)
-- Fetch URLs listed in the sitemap and verify they are accessible (HTTP 200)
-- Check that pages do not contain unexpected `robots` `noindex` meta tags
-- Ensure key pages are crawlable and indexable
+- Confirm the existence of the `sitemap.xml`
+- Fetch and validate URLs listed in the sitemap (HTTP 200)
+- Ensure no unexpected `noindex` meta tags exist
+- Verify that key pages are crawlable and indexable
 
 ### 3. 404 Link Verification
-- Crawl through pages and check that all links lead to valid pages (no 404 errors)
+- Check all links on sitemap-listed pages to ensure they do not return 404 errors
 
-## Technology Stack
+---
 
-- [Playwright](https://playwright.dev/) for browser automation and API requests
-- TypeScript for type-safe scripting
-- Node.js environment
+## 🛠 Technology Stack
 
-## Project Structure and Approach
+- [Playwright](https://playwright.dev/) – browser automation and API testing
+- TypeScript – typed scripting
+- Node.js – JavaScript runtime environment
 
-- Tests are organized by feature and use Playwright’s `test` runner
-- Utilizes APIRequestContext for efficient HTTP checks without loading full pages where possible
-- Employed modular functions and clear assertions following DRY principles
-- Code is commented for clarity and maintainability
+---
 
-## Setup Instructions
+## 🧭 Project Structure & Approach
 
-1. Clone this repository:
+- **Organized by feature:** Each test file targets a specific functionality
+- **Efficient use of APIRequestContext:** For fast, headless URL checks
+- **Modular and DRY:** Reusable logic and helper functions
+- **Readable and maintainable:** Clean assertions, meaningful comments
+- **Ready to scale:** Page Object Model or similar design patterns can be adopted easily
 
-   ```git clone https://github.com/evenevanlinden/netlify-playwright-tests.git```
-   ```cd netlify-playwright-tests```
+---
+
+## 🚀 Setup Instructions
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/evenevanlinden/netlify-playwright-tests.git
+   cd netlify-playwright-tests
 
 2. Install dependencies:
-   ```npm install```
+   ```bash
+   npm install
 
-3. Ensure you have Node.js v16+ installed.
+3. Install Playwright browsers:
+   ```bash
+   npx playwright install
 
-## Running the Tests
+4. Check Node.js version:
+   ```bash
+   node -v
+**Note:** Node.js v16 or higher is required.
 
-   To run all tests:
+## 🧪 Running the Tests
 
-   ```npx playwright test```
+1. To run all tests:
+   ```bash
+   npx playwright test
 
-   To run a specific test file, for example sitemap crawlability:
+2. To run a specific test file, for example sitemap crawlability:
 
-   ```npx playwright test tests/sitemap-crawlability.spec.ts```
+   ```bash
+   npx playwright test tests/sitemap-crawlability.spec.ts
 
-   View test reports (HTML) after running tests:
+3. View the HTML test report after running tests:
 
-   ```npx playwright show-report```
+   ````bash
+   npx playwright show-report
 
-## Assumptions and Limitations
-- Some pages may dynamically generate meta tags, which can lead to false positives on noindex detection.
-- The sitemap is assumed to be static and publicly accessible.
-- Tests rely on stable network connectivity; occasional timeouts may occur due to network latency.
-- The 404 link verification covers pages found within the sitemap but does not recursively crawl the entire site.
+## 📌 Assumptions & Limitations
+🔧 **Test limits**: By default, tests are limited to checking only 10–20 pages for development speed and practicality.  
+  To run tests on the entire sitemap, update the test limit in the source code (e.g., set it to `1000000` or another high number).
 
-## Additional Notes
+- Some pages may dynamically generate meta tags, which could result in false positives on noindex detection.
+- Sitemap is assumed to be static and publicly accessible.
+- The 404 verification test covers only pages listed in the sitemap.
+- Network instability or slow responses may occasionally cause timeouts or flakiness.
+
+## 📝 Additional Notes
 - The test suite aims for maintainability and clarity rather than exhaustive coverage.
 - Proper error handling and test isolation are implemented to minimize flakiness.
 - Page Object Model patterns can be extended further as the project scales.
 
-## Contact
+## 📫 Contact
 For any questions regarding this assessment or code, please contact: evenevanlinden@gmail.com
