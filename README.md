@@ -80,7 +80,7 @@ The purpose of the tests is to validate key functionalities and crawlability of 
    ````bash
    npx playwright show-report
 
-**Note:** An example static report is included in this repository under the example-report/ directory for reference purposes. You can open example-report/index.html in your browser to preview what a test          report looks like without running the suite.
+**Note:** An example static report is included in this repository under the example-report/ directory for reference purposes. You can open example-report/html-report.html in your browser to preview what a test          report looks like without running the suite.
 
 ## 📌 Assumptions & Limitations
 🔧 **Test limits**: By default, tests are limited to checking only 10–20 pages for development speed and practicality.  
